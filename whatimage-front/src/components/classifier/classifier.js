@@ -54,6 +54,22 @@ class Classifier extends Component {
         },
       })
       .then((resp) => {
+        this.getImageClass(resp);
+        console.log(resp.data.id);
+      })
+      .catch((err) => {
+        console.log("Error message here " + err);
+      });
+  };
+
+  getImageClass = (obj) => {
+    axios
+      .get(`http://127.0.0.1:8000/api/images/${obj.data.id}/`, {
+        headers: {
+          accept: "application/json",
+        },
+      })
+      .then((resp) => {
         console.log(resp);
       })
       .catch((err) => {
@@ -69,7 +85,7 @@ class Classifier extends Component {
     ));
 
     return (
-      <Dropzone onDrop={this.onDrop} accept="image/png, image/jpg">
+      <Dropzone onDrop={this.onDrop} accept="image/png,image/jpg, image/jpeg">
         {({ isDragActive, getRootProps, getInputProps }) => (
           <section className="container">
             <div {...getRootProps({ className: "dropzone back" })}>
