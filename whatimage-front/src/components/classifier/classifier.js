@@ -43,7 +43,21 @@ class Classifier extends Component {
     }, 1000);
   };
 
+  activateSpinner = () => {
+    this.setState({
+      files: [],
+      isLoading: true,
+    });
+  };
+
+  deactivateSpinner = () => {
+    this.setState({
+      isLoading: false,
+    });
+  };
+
   sendImage = () => {
+    this.activateSpinner();
     let formData = new FormData();
     formData.append("picture", this.state.files[0], this.state.files[0].name);
     axios
@@ -75,6 +89,7 @@ class Classifier extends Component {
       .catch((err) => {
         console.log("Error message here " + err);
       });
+    this.deactivateSpinner();
   };
 
   render() {
