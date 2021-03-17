@@ -84,7 +84,12 @@ class Classifier extends Component {
             </div>
             <aside>{files}</aside>
             {this.state.files.length > 0 && (
-              <Button variant="info" size="lg" className="mt-3">
+              <Button
+                variant="info"
+                size="lg"
+                className="mt-3"
+                onClick={this.sendImage}
+              >
                 Select Image
               </Button>
             )}
