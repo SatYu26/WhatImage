@@ -115,9 +115,7 @@ class Classifier extends Component {
               </Button>
             )}
             {this.state.isLoading && (
-              <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
+              <Spinner animation="border" role="status"></Spinner>
             )}
             {this.state.recentImage && (
               <React.Fragment>
