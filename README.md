@@ -1,5 +1,3 @@
-# 🚧 ! Work in Progress ! 🚧
-
 # WhatImage
 
 AI project (Image Classifier) with the use of React, Django Rest Framework and Keras models.
