@@ -11,20 +11,6 @@ class Classifier extends Component {
     recentImage: null,
   };
 
-  // componentDidMount() {
-  //   this.getImages();
-  // }
-
-  // getImages = () => {
-  //   axios
-  //     .get("http://127.0.0.1:8000/api/images/", {
-  //       headers: { accept: "application/json" },
-  //     })
-  //     .then((resp) => {
-  //       console.log(resp);
-  //     });
-  // };
-
   onDrop = (files) => {
     this.setState({ files: [], isLoading: true, recentImage: null });
     this.loadImage(files);
