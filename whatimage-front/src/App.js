@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 // eslint-disable-next-line
 import Classifier from "./components/classifier/classifier.js";
-import ImageList from "./components/ImageList/ImageList";
+import ImageList from "./components/ImageList/ImageList.js";
 
 function App() {
   return (
