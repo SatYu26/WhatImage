@@ -44,8 +44,7 @@ class Classifier extends Component {
   };
 
   sendImage = () => {
-    // eslint-disable-next-line
-    let formData = new formData();
+    let formData = new FormData();
     formData.append("picture", this.state.files[0], this.state.files[0].name);
     axios
       .post("http://127.0.0.1:8000/api/images/", formData, {
@@ -56,6 +55,9 @@ class Classifier extends Component {
       })
       .then((resp) => {
         console.log(resp);
+      })
+      .catch((err) => {
+        console.log("Error message here " + err);
       });
   };
 
