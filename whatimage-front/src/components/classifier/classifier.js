@@ -10,9 +10,9 @@ class Classifier extends Component {
     isLoading: false,
   };
 
-  componentDidMount() {
-    this.getImages();
-  }
+  // componentDidMount() {
+  //   this.getImages();
+  // }
 
   // getImages = () => {
   //   axios
@@ -41,6 +41,22 @@ class Classifier extends Component {
         }
       );
     }, 1000);
+  };
+
+  sendImage = () => {
+    // eslint-disable-next-line
+    let formData = new formData();
+    formData.append("picture", this.state.files[0], this.state.files[0].name);
+    axios
+      .post("http://127.0.0.1:8000/api/images/", formData, {
+        headers: {
+          accept: "application/json",
+          "content-type": "multipart/form-data",
+        },
+      })
+      .then((resp) => {
+        console.log(resp);
+      });
   };
 
   render() {
