@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Dropzone from "react-dropzone";
-import { Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import "./classifier.css";
 import axios from "axios";
 
@@ -67,6 +67,11 @@ class Classifier extends Component {
               </p>
             </div>
             <aside>{files}</aside>
+            {this.state.files.length > 0 && (
+              <Button variant="info" size="lg" className="mt-3">
+                Select Image
+              </Button>
+            )}
             {this.state.isLoading && (
               <Spinner animation="border" role="status">
                 <span className="sr-only">Loading...</span>
