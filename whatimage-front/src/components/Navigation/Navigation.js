@@ -6,9 +6,8 @@ const Navigation = () => {
     <Navbar bg="dark" variant="dark" className="mb-3">
       <Navbar.Brand href="#home">WhatImage</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/list">Images History</Nav.Link>
       </Nav>
     </Navbar>
   );
