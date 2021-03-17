@@ -63,6 +63,7 @@ class ImageList extends Component {
               this.state.images.length > 2 && (
                 <Button
                   variant="primary"
+                  className="mb-3"
                   size="lg"
                   onClick={this.handleVisible}
                 >
@@ -70,7 +71,9 @@ class ImageList extends Component {
                 </Button>
               )}
             {this.state.images.length <= this.state.visible &&
-              this.state.images.length > 2 && <h3>No more images to Load</h3>}
+              this.state.images.length > 2 && (
+                <h3 className="mb-3">No more images to Load</h3>
+              )}
           </React.Fragment>
         )}
       </div>
